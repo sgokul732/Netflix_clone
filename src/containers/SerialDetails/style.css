@@ -1,0 +1,16 @@
+.input-group{
+    margin :20px 0;
+ 
+}
+.details{
+ 
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.left-bar{
+    width:30%
+}
+.back{
+    margin: 20px ;
+}
