@@ -22,8 +22,7 @@ export const getSeasonsFailure = (data) => {
 const BASE_URL = "http://api.tvmaze.com/shows/";
 
 export const fetchSeasons = (key) => {
-
-  let URI = BASE_URL + key+"/seasons";
+  let URI = BASE_URL + key + "/seasons";
 
   return (dispatch) => {
     dispatch(getSeasons());
@@ -36,6 +35,47 @@ export const fetchSeasons = (key) => {
       .catch((err) => {
         const shows = err.data;
         dispatch(getSeasonsFailure(shows));
+      });
+  };
+};
+
+export const getEpisode = () => {
+  return {
+    type: "GET_EPISODE",
+  };
+};
+
+export const getEpisodeSuccess = (data) => {
+    console.log("==========",data)
+  return {
+    type: "GET_EPISODE_SUCCESS",
+    payload: data,
+  };
+};
+
+export const getEpisodeFailure = (data) => {
+  return {
+    type: "GET_EPISODE_FAILURE",
+    payload: data,
+  };
+};
+
+export const fetchEpisodes = (key) => {
+  const BASE_URL = "http://api.tvmaze.com/seasons/";
+  let URI = BASE_URL + key + "/episodes";
+
+  return (dispatch) => {
+    dispatch(getEpisode());
+    axios
+      .get(URI)
+      .then((res) => {
+          console.log(res.data,"-------------------");
+        const shows = res.data;
+        dispatch(getEpisodeSuccess(shows));
+      })
+      .catch((err) => {
+        const shows = err.data;
+        dispatch(getEpisodeFailure(shows));
       });
   };
 };

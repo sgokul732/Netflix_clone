@@ -6,11 +6,16 @@
  
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
-.left-bar{
+/* .left-bar{
     width:30%
-}
+} */
 .back{
     margin: 20px ;
+}
+
+.right-bar{
+    width:70%;
+    margin-right: 20px;
 }

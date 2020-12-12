@@ -7,7 +7,7 @@ const SearchSerial = ({ getSerials }) => {
   getSerials(key);
   useEffect(() => {
     getSerials(key);
-  }, [key, getSerials]);
+  }, [key]);
 
   return (
     <div className="input-group">

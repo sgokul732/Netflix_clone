@@ -1,38 +1,52 @@
-import React,{useEffect} from 'react'
-import './style.css'
-import { GetSeasonsReducer } from "../../actions/SearchEpisode";
+import React, { useEffect, useState } from "react";
+import "./style.css";
+
 import { connect } from "react-redux";
-import {  } from "../../actions/SearchEpisode";
-import {fetchSeasons} from '../../actions/SearchEpisode'
+
+import { fetchSeasons, fetchEpisodes } from "../../actions/SearchEpisode";
 const SearchEpisode = (props) => {
+  const [value, setValue] = useState(1);
   const {
     match: {
       params: { id },
     },
     getSeasons,
-    details,
-    error,
-    loading,
+    seasons,
+    getEpisodes,
   } = props;
   useEffect(() => {
     getSeasons(id);
-  }, []);
+  }, [id]);
+
+  useEffect(() => {
+     getEpisodes(value);
+  }, [value]);
+  const seasonData =
+    seasons &&
+    seasons.map((entry, i) => {
+      return (
+        <option key={i} value={entry.id}>
+          {entry.url}
+        </option>
+      );
+    });
+
   return (
-    <div class="input-group mb-3">
-    <select class="custom-select" id="inputGroupSelect02">
-      <option selected>Choose...</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    
-  </div>
-  )
-}
+    <div className="input-group mb-3">
+      <select
+        onChange={(e) => setValue(e.target.value)}
+        className="custom-select"
+        id="inputGroupSelect02"
+      >
+        {seasonData}
+      </select>
+    </div>
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
-    details: state.GetSeasonsReducer.data,
+    seasons: state.GetSeasonsReducer.data,
     loading: state.GetSeasonsReducer.loading,
     error: state.GetSeasonsReducer.error,
   };
@@ -41,7 +55,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getSeasons: (key) => dispatch(fetchSeasons(key)),
+    getEpisodes: (key) => dispatch(fetchEpisodes(key)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SearchEpisode);
-

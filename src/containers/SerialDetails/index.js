@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import ShowInfo from "../../components/ShowInfo";
 import "./style.css";
 import SearchEpisode from "../../components/SearchEpisode";
+import EpisodeList from "../../components/EpisodeList";
 const SerialDetails = (props) => {
   const history = useHistory();
 
@@ -14,8 +15,13 @@ const SerialDetails = (props) => {
       </button>
       </div>
       <div className="details">
+     
         <ShowInfo {...props} />
+       
+        <div className="right-bar">
         <SearchEpisode {...props} />
+        <EpisodeList {...props}/>
+        </div>
       </div>
     </>
   );
