@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import { SearchSerialReducer, ShowDetailReducer } from "./SearchSerialReducer";
-import { GetSeasonsReducer ,GetEpisodeReducer} from "./SearchEpisodeReducer";
+import { GetSeasonsReducer, GetEpisodeReducer } from "./SearchEpisodeReducer";
 const rootReducer = combineReducers({
   SearchSerialReducer,
   ShowDetailReducer,
   GetSeasonsReducer,
-  GetEpisodeReducer
+  GetEpisodeReducer,
 });
 export default rootReducer;

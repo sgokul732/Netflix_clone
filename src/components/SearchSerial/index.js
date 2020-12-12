@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchShows } from "../../actions/SearchSerial";
 import { connect } from "react-redux";
-import './style.css';
+import "./style.css";
 const SearchSerial = ({ getSerials }) => {
   const [key, setKeyword] = useState("");
   getSerials(key);

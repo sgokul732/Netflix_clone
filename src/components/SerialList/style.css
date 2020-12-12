@@ -1,11 +1,12 @@
-.media{
-    margin:20px 0;
+.media {
+  display: flex;
+  margin: 20px 0;
 }
-img{
-    height:400px;
-    width:30%;
-    margin: 20px auto;
+img {
+  height: 400px;
+  width: 30%;
+  margin: auto;
 }
-ul{
-    margin-top: 20px;
+ul {
+  margin-top: 20px;
 }

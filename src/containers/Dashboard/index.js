@@ -5,12 +5,10 @@ import "./style.css";
 
 const DashBoard = () => {
   return (
-    
-      <div className="list-card">
-        <SearchSerial />
-        <SerialList />
-      </div>
-    
+    <div className="list-card">
+      <SearchSerial />
+      <SerialList />
+    </div>
   );
 };
 

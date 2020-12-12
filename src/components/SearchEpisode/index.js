@@ -19,7 +19,7 @@ const SearchEpisode = (props) => {
   }, [id]);
 
   useEffect(() => {
-     getEpisodes(value);
+    getEpisodes(value);
   }, [value]);
   const seasonData =
     seasons &&

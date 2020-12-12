@@ -8,9 +8,10 @@ import "./style.css";
 const EpisodeList = (props) => {
   const { details, error, loading } = props;
   if (loading || !details) {
-    return <img className='invalid' src={loadingImg} alt="Loading" />;
+    return <img className="invalid" src={loadingImg} alt="Loading" />;
   }
-  if (error) return <img className='invalid' src={noData} alt="No Data Available" />;
+  if (error)
+    return <img className="invalid" src={noData} alt="No Data Available" />;
   return details.map((entry, i) => (
     <EpisodeDetails
       key={i}

@@ -1,21 +1,18 @@
-.input-group{
-    margin :20px 0;
- 
+.input-group {
+  margin: 20px 0;
 }
-.details{
- 
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-/* .left-bar{
-    width:30%
-} */
-.back{
-    margin: 20px ;
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.right-bar{
-    width:70%;
-    margin-right: 20px;
+.back {
+  margin: 20px 10px;
+}
+
+.right-bar {
+  width: 70%;
+  margin: 10px;
+  margin-top: -10px;
 }

@@ -46,7 +46,6 @@ export const getEpisode = () => {
 };
 
 export const getEpisodeSuccess = (data) => {
-    console.log("==========",data)
   return {
     type: "GET_EPISODE_SUCCESS",
     payload: data,
@@ -69,7 +68,6 @@ export const fetchEpisodes = (key) => {
     axios
       .get(URI)
       .then((res) => {
-          console.log(res.data,"-------------------");
         const shows = res.data;
         dispatch(getEpisodeSuccess(shows));
       })

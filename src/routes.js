@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import DashBoard from "./containers/Dashboard";
 import { Provider } from "react-redux";
 import SerialDetails from "./containers/SerialDetails";
-import store from './store'
+import store from "./store";
 const Routes = () => {
   return (
     <Provider store={store}>

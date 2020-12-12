@@ -9,18 +9,16 @@ const SerialDetails = (props) => {
 
   return (
     <>
-    <div className="back" >
-      <button className="btn btn-primary" onClick={() => history.push("/")}>
-        Back
-      </button>
+      <div className="back">
+        <button className="btn btn-primary" onClick={() => history.push("/")}>
+          Back
+        </button>
       </div>
       <div className="details">
-     
         <ShowInfo {...props} />
-       
         <div className="right-bar">
-        <SearchEpisode {...props} />
-        <EpisodeList {...props}/>
+          <SearchEpisode {...props} />
+          <EpisodeList {...props} />
         </div>
       </div>
     </>
