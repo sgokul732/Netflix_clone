@@ -2,8 +2,8 @@ import React from "react";
 import EpisodeDetails from "../EpisodeDetails";
 
 import { connect } from "react-redux";
-import loadingImg from "../../assets/loading.png";
-import noData from "../../assets/no-data.png";
+import loadingImg from "../../assets/images/loading.png";
+import noData from "../../assets/images/no-data.png";
 import "./style.css";
 const EpisodeList = (props) => {
   const { details, error, loading } = props;
@@ -15,7 +15,7 @@ const EpisodeList = (props) => {
   return details.map((entry, i) => (
     <EpisodeDetails
       key={i}
-      url={entry.url}
+      number={entry.number}
       runtime={entry.runtime}
       airdate={entry.airdate}
     />

@@ -23,10 +23,10 @@ const SearchEpisode = (props) => {
   }, [value]);
   const seasonData =
     seasons &&
-    seasons.map((entry, i) => {
+    seasons.map((entry) => {
       return (
-        <option key={i} value={entry.id}>
-          {entry.url}
+        <option key={entry.id} value={entry.id}>
+         Season {entry.number}
         </option>
       );
     });

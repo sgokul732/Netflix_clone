@@ -1,8 +1,8 @@
 import React from "react";
 import SerialInfo from "../SerialInfo";
 import { connect } from "react-redux";
-import loading from "../../assets/loading.png";
-import noData from "../../assets/no-data.png";
+import loading from "../../assets/images/loading.png";
+import noData from "../../assets/images/no-data.png";
 import "./style.css";
 const SerialList = (props) => {
   if (props.loading) return <img src={loading} alt="Loading" />;

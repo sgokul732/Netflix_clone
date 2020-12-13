@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { fetchShowDetails } from "../../actions/SearchSerial";
 import { connect } from "react-redux";
-import loadingImg from "../../assets/loading.png";
-import noData from "../../assets/no-data.png";
+import loadingImg from "../../assets/images/loading.png";
+import noData from "../../assets/images/no-data.png";
 import "./style.css";
 const ShowInfo = (props) => {
   const {
@@ -27,9 +27,6 @@ const ShowInfo = (props) => {
       <div className="card-body">
         <h5 className="card-title">{details.name}</h5>
         <p className="card-text">{details.summary}</p>
-        <p className="card-text">
-          <small className="text-muted"> Type:{details.type}</small>
-        </p>
       </div>
       <img
         className="card-img-bottom"

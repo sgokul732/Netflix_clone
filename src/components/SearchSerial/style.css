@@ -1,3 +1,7 @@
+.input-group {
+  margin: 20px 10px;
+}
+
 .input-group input {
-  margin-left: 30px;
+  margin-left: 40px;
 }
