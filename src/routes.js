@@ -7,7 +7,7 @@ import store from "./store";
 const Routes = () => {
   return (
     <Provider store={store}>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Route exact path="/" component={DashBoard} />
         <Route exact path="/dashboard" component={DashBoard} />
         <Route exact path="/serials/:id" component={SerialDetails} />
