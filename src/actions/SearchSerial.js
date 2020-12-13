@@ -19,7 +19,7 @@ export const getShowsFailure = (data) => {
   };
 };
 
-const BASE_URL = "http://api.tvmaze.com/shows";
+const BASE_URL = "https://api.tvmaze.com/shows";
 
 export const fetchShows = (key) => {
   let URI = BASE_URL;

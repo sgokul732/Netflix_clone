@@ -19,7 +19,7 @@ export const getSeasonsFailure = (data) => {
   };
 };
 
-const BASE_URL = "http://api.tvmaze.com/shows/";
+const BASE_URL = "https://api.tvmaze.com/shows/";
 
 export const fetchSeasons = (key) => {
   let URI = BASE_URL + key + "/seasons";
@@ -60,7 +60,7 @@ export const getEpisodeFailure = (data) => {
 };
 
 export const fetchEpisodes = (key) => {
-  const BASE_URL = "http://api.tvmaze.com/seasons/";
+  const BASE_URL = "https://api.tvmaze.com/seasons/";
   let URI = BASE_URL + key + "/episodes";
 
   return (dispatch) => {
