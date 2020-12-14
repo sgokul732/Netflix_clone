@@ -22,6 +22,11 @@ const ShowInfo = (props) => {
     return <img src={loadingImg} alt="Loading" />;
   }
   if (error) return <img src={noData} alt="No Data Available" />;
+
+  let thumbnail=noData;
+  if(details.image && details.image.original){
+    thumbnail=details.image.original
+  }
   return (
     <div className="card">
       <div className="card-body">
@@ -30,7 +35,7 @@ const ShowInfo = (props) => {
       </div>
       <img
         className="card-img-bottom"
-        src={details.image.original}
+        src={thumbnail}
         alt="Serial Not Available"
       />
     </div>
