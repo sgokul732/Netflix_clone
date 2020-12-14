@@ -7,9 +7,13 @@ export const SearchSerialReducer = (state = {}, action) => {
         error: "",
       };
     case "GET_SHOWS_SUCCESS":
+      let data = action.payload;
+      if (action.payload.length > 0 && action.payload[0].show) {
+        data = action.payload.map((entry) => entry.show);
+      }
       return {
         loading: false,
-        data: action.payload,
+        data: data,
         error: "",
       };
     case "GET_SHOWS_FAILURE":

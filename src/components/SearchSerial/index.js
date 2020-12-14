@@ -4,15 +4,18 @@ import { connect } from "react-redux";
 import "./style.css";
 const SearchSerial = ({ getSerials }) => {
   const [key, setKeyword] = useState("");
-  getSerials(key);
+  const [submit, setSubmit] = useState(false);
   useEffect(() => {
     getSerials(key);
-  }, [key]);
+  }, [submit]);
 
   return (
     <div className="input-group">
       <input
-        onChange={(e) => setKeyword(e.target.value)}
+        onChange={(e) => {
+          e.preventDefault();
+          setKeyword(e.target.value);
+        }}
         value={key}
         type="text"
         className="form-control"
@@ -20,14 +23,17 @@ const SearchSerial = ({ getSerials }) => {
         aria-label="Recipient's username with two button addons"
       />
       <button
-        onClick={() => getSerials(key)}
+        onClick={() => setSubmit(!submit)}
         className="btn btn-outline-secondary"
         type="submit"
       >
         Search
       </button>
       <button
-        onClick={() => setKeyword("")}
+        onClick={() => {
+          setKeyword("");
+          setSubmit(!submit);
+        }}
         className="btn btn-outline-secondary"
         type="button"
       >

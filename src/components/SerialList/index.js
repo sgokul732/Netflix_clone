@@ -5,8 +5,10 @@ import loading from "../../assets/images/loading.png";
 import noData from "../../assets/images/no-data.png";
 import "./style.css";
 const SerialList = (props) => {
-  if (props.loading) return <img src={loading} alt="Loading" />;
-  if (props.error) return <img src={noData} alt="No Data Available" />;
+  if (props.loading || !props.getSerials)
+    return <img src={loading} alt="Loading" />;
+  if (props.error || !props.getSerials.length)
+    return <img src={noData} alt="No Data Available" />;
   return props.getSerials.map((item, index) => {
     return (
       <ul key={index}>
