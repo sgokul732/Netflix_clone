@@ -1,12 +1,10 @@
-.media {
-  display: flex;
-  margin: 20px 0;
-}
+
 img {
   height: 400px;
   width: 30%;
   margin: auto;
 }
-ul {
-  margin-top: 20px;
+ul li{
+  margin: 20px 0;
+  margin-left: -20px;
 }
